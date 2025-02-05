@@ -7,239 +7,239 @@ import { useParams } from "next/navigation";
 import Modal from "@/app/components/client/Modal";
 import { useCookies } from "next-client-cookies";
 
-const dummyData: TodoData[] = [
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-  {
-    todo: "Implement user authentication system",
-    assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
-    status: "Not Started",
-    details:
-      "Set up authentication using Firebase Auth and integrate it with the frontend.",
-  },
-  {
-    todo: "Design landing page UI",
-    assignTo: ["@Julaeha", "@Komarudin"],
-    status: "In Progress",
-    details:
-      "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
-  },
-  {
-    todo: "Optimize database queries",
-    assignTo: ["@Junaedi", "@Saepul"],
-    status: "Completed",
-    details:
-      "Refactor SQL queries to improve performance and reduce load times.",
-  },
-];
+// const dummyData: TodoData[] = [
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+//   {
+//     todo: "Implement user authentication system",
+//     assignTo: ["@Julaeha", "@Junaedi", "@Saepul", "@Komarudin", "@Jinaedi"],
+//     status: "Not Started",
+//     details:
+//       "Set up authentication using Firebase Auth and integrate it with the frontend.",
+//   },
+//   {
+//     todo: "Design landing page UI",
+//     assignTo: ["@Julaeha", "@Komarudin"],
+//     status: "In Progress",
+//     details:
+//       "Create a responsive landing page with Tailwind CSS and ensure mobile compatibility.",
+//   },
+//   {
+//     todo: "Optimize database queries",
+//     assignTo: ["@Junaedi", "@Saepul"],
+//     status: "Completed",
+//     details:
+//       "Refactor SQL queries to improve performance and reduce load times.",
+//   },
+// ];
 
 const TodoPage = () => {
   const [detail, setDetail] = useState<TodoData | null>(null);

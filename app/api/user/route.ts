@@ -1,4 +1,3 @@
-import prisma from "@/libs/prisma";
 import { ResponseSuccess } from "@/libs/templates";
 
 export async function GET() {

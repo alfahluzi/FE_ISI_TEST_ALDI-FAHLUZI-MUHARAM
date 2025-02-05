@@ -1,6 +1,5 @@
 import prisma from "@/libs/prisma";
 import { ResponseError, ResponseSuccess } from "@/libs/templates";
-import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 
 export async function POST(req: Request) {

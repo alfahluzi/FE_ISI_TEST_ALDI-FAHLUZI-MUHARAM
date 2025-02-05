@@ -29,8 +29,8 @@ const LoginPage: React.FC = () => {
         return new Error("Invalid credentials");
       }
       return res.json();
-    } catch (err: any) {
-      return new Error(err.message);
+    } catch (err) {
+      return new Error((err as Error).message);
     }
   };
 

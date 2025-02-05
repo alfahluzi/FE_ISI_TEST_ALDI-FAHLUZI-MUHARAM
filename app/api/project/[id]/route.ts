@@ -1,12 +1,13 @@
 import prisma from "@/libs/prisma";
 import { ResponseError, ResponseSuccess } from "@/libs/templates";
 import { NextRequest } from "next/server";
-
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  const { id } = await params;
+type Props = {
+  params: Promise<{
+    id: string;
+  }>;
+};
+export async function GET(req: NextRequest, props: Props) {
+  const { id } = await props.params;
   const project = await prisma.project.findUnique({
     where: { id },
     include: {
